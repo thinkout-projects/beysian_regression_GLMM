@@ -12,7 +12,7 @@
 
 という式があるとするならば、実際には測定や予測にある程度「ゆらぎ」があるので、実際には
 <img src="https://latex.codecogs.com/gif.latex?Y&space;\sim&space;Normal(ax&plus;b,&space;\sigma_{Y})">
-とある確率分布になるというのがベイズ推定でよく用いられる考え方。<br>
+とある確率分布になるというのがベイズ推定でよく用いられる考え方。
 
 さらに、一般化線形混合modelはa,bが人によってばらつきがある「だろう」というのを前提にしてmodelを組むものとなっている。
 
@@ -20,8 +20,11 @@
 
 ### 結局ベイズ推定で何が求められるの？
 誤解をおそれずに言うなら、それらしいようにランダムに出力された数値の群。
+
 parametersブロックで宣言された変数(a0, b, ak[K], s_a, s_Y)およびtransformed parametersブロックで宣言された変数(a[k])のそれぞれについて
-chain数 * (iter - warmup)分の数値が出力される。(詳しくはmain.ipynbのstanコード宣言部分を確認)<br>
+chain数 * (iter - warmup)分の数値が出力される。(詳しくはmain.ipynbのstanコード宣言部分を確認)
+
+
 それの中央値や2.5パーセンタイルー97.5パーセンタイルを用いることで、代表値や信頼区間を産出したりする。
 ```print(fit)```
 することで、だいたいの要素は確認できる。
@@ -41,24 +44,24 @@ chain数 * (iter - warmup)分の数値が出力される。(詳しくはmain.ipy
 
 ### 参考
 #### （そもそも）Latexの書き方
-・Latexそのものについて
-http://www002.upp.so-net.ne.jp/latex/index.html
-・Githubに投稿する際には一工夫必要
-http://idken.net/posts/2017-02-28-math_github/
+・Latexそのものについて<br>
+http://www002.upp.so-net.ne.jp/latex/index.html <br>
+・Githubに投稿する際には一工夫必要<br>
+http://idken.net/posts/2017-02-28-math_github/ <br>
 
 #### ベイズ推定について
-・ベイズ推定そのものについて
-https://www.amazon.co.jp/dp/4065165369
-・Stanの書き方について（上記書籍はStanからは離脱している）
-https://www.amazon.co.jp/dp/4320112423
+・ベイズ推定そのものについて<br>
+https://www.amazon.co.jp/dp/4065165369 <br>
+・Stanの書き方について（上記書籍はStanからは離脱している）<br>
+https://www.amazon.co.jp/dp/4320112423 <br>
 
 #### pyStanについて
-正直、このrepositoryのところでほぼOKな気はする。
-・公式document
-https://pystan.readthedocs.io/en/latest/getting_started.html
-・参考にした資料
-http://tekenuko.hatenablog.com/entry/2017/10/14/150405
-https://deepblue-ts.co.jp/%E7%B5%B1%E8%A8%88%E5%AD%A6/mcmc/%E3%83%99%E3%82%A4%E3%82%BA%E7%B5%B1%E8%A8%88%E3%83%A2%E3%83%87%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%82%92pystan%E3%81%A7%E5%AE%9F/
+正直、このrepositoryのところでほぼOKな気はする。<br>
+・公式document<br>
+https://pystan.readthedocs.io/en/latest/getting_started.html <br>
+・参考にした資料 <br>
+http://tekenuko.hatenablog.com/entry/2017/10/14/150405 <br>
+https://deepblue-ts.co.jp/%E7%B5%B1%E8%A8%88%E5%AD%A6/mcmc/%E3%83%99%E3%82%A4%E3%82%BA%E7%B5%B1%E8%A8%88%E3%83%A2%E3%83%87%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%82%92pystan%E3%81%A7%E5%AE%9F/ <br>
 
 ### 最後に
 Mac OS CatalinaでStanを行おうとすると第一の関門はStanをinstallするところです。それが終わればほぼ終わりといってもいいでしょう。
