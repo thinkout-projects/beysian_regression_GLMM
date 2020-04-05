@@ -37,5 +37,28 @@ chain数 * (iter - warmup)分の数値が出力される。(詳しくはmain.ipy
 とすることによって、平均0, 分散1にx,yを正規化する。
 
 <img src="https://latex.codecogs.com/gif.latex?Y'&space;=&space;a'x'&plus;b'">
-
 こうしてもとめたa'が標準化回帰係数
+
+### 参考
+#### （そもそも）Latexの書き方
+・Latexそのものについて
+http://www002.upp.so-net.ne.jp/latex/index.html
+・Githubに投稿する際には一工夫必要
+http://idken.net/posts/2017-02-28-math_github/
+
+#### ベイズ推定について
+・ベイズ推定そのものについて
+https://www.amazon.co.jp/dp/4065165369
+・Stanの書き方について（上記書籍はStanからは離脱している）
+https://www.amazon.co.jp/dp/4320112423
+
+#### pyStanについて
+正直、このrepositoryのところでほぼOKな気はする。
+・公式document
+https://pystan.readthedocs.io/en/latest/getting_started.html
+・参考にした資料
+http://tekenuko.hatenablog.com/entry/2017/10/14/150405
+https://deepblue-ts.co.jp/%E7%B5%B1%E8%A8%88%E5%AD%A6/mcmc/%E3%83%99%E3%82%A4%E3%82%BA%E7%B5%B1%E8%A8%88%E3%83%A2%E3%83%87%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%82%92pystan%E3%81%A7%E5%AE%9F/
+
+### 最後に
+Mac OS CatalinaでStanを行おうとすると第一の関門はStanをinstallするところです。それが終わればほぼ終わりといってもいいでしょう。
