@@ -6,7 +6,7 @@
 
 今回のmodelはランダム切片modelというもの。<br>
 
-![Figure1](figures/Figure1.gif)
+![Figure1](figures/Figure1.gif)<br>
 
 
 
