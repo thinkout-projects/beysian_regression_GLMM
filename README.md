@@ -7,6 +7,9 @@
 今回のmodelはランダム切片modelというもの。<br>
 
 ![Figure1](figures/Figure1.gif)
+
+
+
 ![Figure2](figures/Figure2.gif)
 
 という式があるとするならば、実際には測定や予測にある程度「ゆらぎ」があるので、実際には
