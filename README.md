@@ -5,13 +5,14 @@
 ベイズ推定の中で、特に<span style="color: red; ">個人間の影響</span>を考えられるようにしたもの
 
 今回のmodelはランダム切片modelというもの。<br>
-<img src="https://latex.codecogs.com/gif.latex?Y'[n]&space;\sim&space;Normal(\alpha&space;[PID[n]]&space;&plus;&space;\beta&space;X'[n],&space;\sigma_{Y}&space;)&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;n&space;=&space;1,\ldots,&space;N\\&space;\alpha[k]&space;=&space;\alpha_{all}&space;&plus;&space;\alpha_{id}[k]&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,k&space;=&space;1,\ldots,&space;K\\&space;\alpha_{id}[k]&space;\sim&space;Normal(0,&space;\sigma_{\alpha})&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,k&space;=&space;1,\ldots,&space;K\\">
+
+![Figure1](figures/Figure1.gif)
 
 <br>
-<img src="https://latex.codecogs.com/gif.latex?Y&space;=&space;aX&plus;b">
+![Figure2](figures/Figure2.gif)
 
 という式があるとするならば、実際には測定や予測にある程度「ゆらぎ」があるので、実際には
-<img src="https://latex.codecogs.com/gif.latex?Y&space;\sim&space;Normal(ax&plus;b,&space;\sigma_{Y})">
+![Figure3](figures/Figure3.gif)
 とある確率分布になるというのがベイズ推定でよく用いられる考え方。
 
 さらに、一般化線形混合modelはa,bが人によってばらつきがある「だろう」というのを前提にしてmodelを組むものとなっている。
@@ -24,22 +25,21 @@
 parametersブロックで宣言された変数(a0, b, ak[K], s_a, s_Y)およびtransformed parametersブロックで宣言された変数(a[k])のそれぞれについて
 chain数 * (iter - warmup)分の数値が出力される。(詳しくはmain.ipynbのstanコード宣言部分を確認)
 
-
 それの中央値や2.5パーセンタイルー97.5パーセンタイルを用いることで、代表値や信頼区間を産出したりする。
 ```print(fit)```
 することで、だいたいの要素は確認できる。
 
 ### 標準化回帰係数とは？
-<img src="https://latex.codecogs.com/gif.latex?Y&space;=&space;aX&plus;b">
+![Figure2](figures/Figure2.gif)
 においてYが1万くらいのオーダーのもの、xが0〜1のオーダーのものだと、aがおそらく10000overになるが、aの値が大きければ非常に重要かと言えばそうとは限らない。
 
 故に、同じくらいのオーダーに持ってくる必要がある。
 そのために
-<img src="https://latex.codecogs.com/gif.latex?x'&space;=&space;\frac{x-\mu_{x}}{\sigma_{x}}">
-<img src="https://latex.codecogs.com/gif.latex?y'&space;=&space;\frac{y-\mu_{y}}{\sigma_{y}}">
+![Figure4](figures/Figure4.gif)
+![Figure5](figures/Figure5.gif)
 とすることによって、平均0, 分散1にx,yを正規化する。
 
-<img src="https://latex.codecogs.com/gif.latex?Y'&space;=&space;a'x'&plus;b'">
+![Figure6](figures/Figure6.gif)
 こうしてもとめたa'が標準化回帰係数
 
 ### 参考
